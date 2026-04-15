@@ -2,7 +2,6 @@ import React, { use } from 'react'
 import { useEffect } from 'react'
 import "../designing/contest.css"
 import questions_mcq from "../questions_mcq.json"
-console.log(questions_mcq)
 import Side_bar from "./side_bar"
 import { useNavigate} from 'react-router-dom'
 import { Link } from 'react-router-dom'
@@ -11,7 +10,6 @@ const box_list = [{language:"JavaScript",image:"https://assets.leetcode.com/stud
   const navigate = useNavigate()
   async function get_data(){
      let data = questions_mcq.filter((item) =>item.category==="powerbi").slice(0, 24);
-     console.log(data)
   }
    useEffect(() => {
 get_data()
