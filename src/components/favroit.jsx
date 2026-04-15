@@ -11,7 +11,6 @@ const favroit = () => {
         try{
     let res = await fetch(`http://localhost:5000/get_favroit?user_id=${user?.id}`)
     let data  = await res.json()
-    console.log(data)
     setdata(data.data);
         }catch(err){
             console.log(err.message)
