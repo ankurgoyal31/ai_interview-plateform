@@ -20,22 +20,17 @@ const progress = () => {
        let res = await fetch("http://localhost:5000/get")
        let data =await res.json();
        let random =  Math.floor(Math.random()*data.data.length);
-       console.log(random)
        set_data(data.data.slice(random,20))
-       console.log(data)
      }
      async function get_interview() {
       try{
        let res = await fetch(`http://localhost:5000/get_attend_interview?user_id=${user?.id}`)
        let data = await res.json()
-       console.log(data)
        set_attend_data(data.data)
       }catch(err){
          alert("please check your network connection")
       }
      }
-
-     console.log(data)
      useEffect(() => {
         get();
      }, [])
@@ -53,7 +48,6 @@ async function get_submitted() {
          alert("please check your network connection")
       }
      }
-     console.log("submitted",sumbitted)
      useEffect(() => {
         get_submitted();
      }, [user?.id])
@@ -67,7 +61,6 @@ async function get_contest_data() {
          alert("please check your network connection")
       }
      }
-     console.log("submitted",sumbitted)
      useEffect(() => {
         get_contest_data();
      }, [user?.id])
