@@ -28,14 +28,12 @@ const recognition = new webkitSpeechRecognition();
 
 recognition.onresult = async(event) => {
   const text = event.results[0][0].transcript;
-  console.log(text);
   let data = await fetch("http://localhost:5000/interview",{
     method:"POST",
     headers:{"Content-Type":"application/json"},
     body:JSON.stringify({current_question:question,answer:text!==""?text:"i am ankur goyal",history:history})
   }) 
   let res = await data.json();
-  console.log(res.data)
    set_history([...history,{question:question,answer:text}])
    speak(res.data)
 };
@@ -50,7 +48,6 @@ const send = async()=>{
   })
 
   let res = await data.json();
-  console.log(res.data)
    set_history([...history,{question:question,answer:text}])
    speak(res.data)
 }
