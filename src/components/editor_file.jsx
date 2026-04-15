@@ -45,7 +45,6 @@ const runCode = async(code)=>{
 })
 let data = await res.json();
  let solution = data.data.solution?.split("\n")
-console.log(solution)
  set_question(data.data)
  }
  useEffect(() => {
@@ -57,7 +56,6 @@ console.log(solution)
  useEffect(() => {
   if(Object.keys(question).length>0){ 
    let lang = Object.keys(question?.code_snippets).filter((item)=>item===language);
-console.log(question)
 setCode(question.code_snippets[lang])
 }
  }, [language])
@@ -81,8 +79,6 @@ function cleanText(text) {
 
 const submit = async()=>{
   try{
-console.log(question)
-
  let res = await fetch("http://localhost:5000/submit_question",{
   method:"POST",
   headers:{"Content-Type":"application/json"},
