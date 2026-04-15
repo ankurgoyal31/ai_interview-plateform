@@ -1,0 +1,29 @@
+.hero_container123354{
+    width: 100%;
+    /* justify-items: center; */
+    /* align-content: center; */
+    height: 100vh;
+    /* background-color: rgb(255, 255, 255); */
+    color: black;
+    /* display: flex; */
+}
+.child_hero56{
+    width: 50%;
+background: rgba(255, 255, 255, 0.496);
+padding: 10px;
+border-radius: 10px;
+border: solid rgba(9, 6, 6, 0.13) 0.5px;
+box-shadow: 2px 2px 15px black;
+width: 100%;
+}
+.container78566444{
+    display: flex;
+ }
+.side_bar{
+    height: 100vh;
+}
+.div_problems{
+    width: 80%;
+    justify-self: center;
+        background: rgba(138, 77, 191, 0.81);
+}
