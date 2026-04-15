@@ -10,7 +10,6 @@ const start_test = () => {
      const [searchParams] = useSearchParams();
     const item = searchParams.get('item');
     const index = searchParams.get('index')||0
-    console.log(item)
       const [count, set_count] = useState(0)
     const[select,set_select] = useState({})
     const[question_list,set_question] = useState([]) 
@@ -22,7 +21,6 @@ const start_test = () => {
      
      useEffect(() => {
         let data = question.filter((item1) =>item1.category===item.toLowerCase()).slice(index,index+24);
-        console.log(data)
         set_question(data)
     }, [])
 
@@ -45,8 +43,6 @@ set_show(true)
         }
       set_arr([...arr, count])
      }
-    // }
-    console.log(count,question_list)
      const count_show= (i)=>{
         if(arr.includes(i)){
              set_count(i)
@@ -58,7 +54,6 @@ set_show(true)
           try{
 let dv = Object.keys(select).map((item)=>select[item])
            let data = question_list.filter((item)=>dv.includes(item.answer))
-                       console.log("datat=>>>>",data)
                       set_prop({score:data.length,attempt:Object.keys(select).length})
            set_result(true)
 
@@ -84,11 +79,6 @@ let dv = Object.keys(select).map((item)=>select[item])
     },1000);
     return()=>clearInterval(time);
      }, [timer,question_list.length>0])
-    
-    console.log(select)
-    
-    
-
   return (
     <>
     {result && <div className='sumbit_detail'><Submit score={prop.score} value={result} test={item} attempt={prop.attempt}  /> </div>}
